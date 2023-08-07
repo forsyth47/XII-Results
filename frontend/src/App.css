@@ -1,0 +1,55 @@
+ body {
+      background-color: #f9eaea;
+      font-family: 'Poppins';
+      margin: 0;
+      padding: 20px;
+    }
+
+.container {
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: 20px;
+      background: linear-gradient(to bottom, #f2f2f2, #ffffff);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+    }
+
+.file-list {
+      list-style: none;
+      padding: 0;
+    }
+
+.file-list li {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+.file-list li:hover {
+      background-color: #f1f1f1;
+    }
+
+.file-icon {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+.file-name {
+      font-weight: bold;
+    }
+	
+.mdi-file {
+		color: pink;
+		padding-right: 20px;
+		padding-left: 15px;
+	}
+	
+a {
+		color: #ce93d8;
+		font-weight: bold;
+		text-decoration: none;
+	}

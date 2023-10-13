@@ -3,8 +3,7 @@
     { "src": "index.js", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/:filename", "dest": "index.js" },
     { "src": "/", "dest": "index.js" },
-    { "src": "/:filename", "dest": "index.js" }
+    { "src": "/file", "dest": "index.js" }
   ]
 }

@@ -10,7 +10,7 @@ const port = 3001;
 
 app.use(cors());
 
-const directoryPath = path.join('sites/');
+const directoryPath = path.join(__dirname, 'sites');
 
 app.get('/', (req, res) => {
     fs.readdir(directoryPath, (err, files) => {

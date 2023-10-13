@@ -11,8 +11,17 @@
     }
   ],
   "routes": [
-    { "src": "/api/files", "dest": "backend/index.js" },
-    { "src": "/api/files/:filename", "dest": "backend/index.js" },
-    { "src": "/(.*)", "dest": "frontend/package.json" }
+    {
+      "src": "/api/files",
+      "dest": "backend/index.js"
+    },
+    {
+      "src": "/api/files/:filename",
+      "dest": "backend/index.js"
+    },
+    {
+      "src": "/frontend/(.*)",
+      "dest": "frontend/$1"
+    }
   ]
 }

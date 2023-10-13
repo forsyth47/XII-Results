@@ -18,7 +18,7 @@ function App() {
         <ul class="file-list" id="fileList">
           {files.map((file, index) => (
             <li key={index}>
-              <a href={`https://xii-results-backend.vercel.app/file/${file}`}>
+              <a href={`https://xii-results-backend.vercel.app/${file}`}>
                 <i className="mdi mdi-file"></i>
                 {file}
               </a>

@@ -4,7 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-
 const app = express();
 const port = 3001;
 
@@ -13,12 +12,12 @@ app.use(cors());
 const directoryPath = path.join(__dirname, 'sites');
 
 app.get('/', (req, res) => {
-    fs.readdir(directoryPath, (err, files) => {
+  fs.readdir(directoryPath, (err, files) => {
     if (err) {
-        return res.status(500).json({ error: 'Error reading directory' });
+      return res.status(500).json({ error: 'Error reading directory' });
     }
     res.json({ files });
-    });
+  });
 });
 
 app.get('/:filename', (req, res) => {
@@ -28,19 +27,10 @@ app.get('/:filename', (req, res) => {
   axios
     .get(externalUrl)
     .then(response => {
-      if (response.status === 200) {
         res.send(response.data);
-      } else {
-        res.status(500).json({ error: 'Error fetching file from external URL' });
-      }
     })
-    .catch(error => {
-      res.status(500).json({ error: 'Error fetching file from external URL' });
-    });
 });
 
-
-
 app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
+  console.log(`Server is running on port ${port}`);
 });

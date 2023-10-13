@@ -10,7 +10,7 @@ app.use(cors());
 
 const directoryPath = path.join(__dirname, 'sites');
 
-app.get('/api/files', (req, res) => {
+app.get('/', (req, res) => {
   fs.readdir(directoryPath, (err, files) => {
     if (err) {
       return res.status(500).json({ error: 'Error reading directory' });
@@ -19,7 +19,7 @@ app.get('/api/files', (req, res) => {
   });
 });
 
-app.get('/api/files/:filename', (req, res) => {
+app.get('/:filename', (req, res) => {
   const filename = req.params.filename;
   const filePath = path.join(directoryPath, filename);
 

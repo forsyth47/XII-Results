@@ -5,7 +5,7 @@ function App() {
   const [files, setFiles] = useState([]);
 
   useEffect(() => {
-    fetch('https://xii-results-backend.vercel.app/api/files')
+    fetch('https://xii-results-backend.vercel.app/')
       .then((response) => response.json())
       .then((data) => setFiles(data.files))
       .catch((error) => console.error('Error fetching files:', error));

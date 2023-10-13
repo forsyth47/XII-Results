@@ -13,22 +13,22 @@ const directoryPath = path.join(__dirname, 'sites');
 
 app.get('/', (req, res) => {
   fs.readdir(directoryPath, (err, files) => {
-    if (err) {
-      return res.status(500).json({ error: 'Error reading directory' });
-    }
-    res.json({ files });
+  if (err) {
+    return res.status(500).json({ error: 'Error reading directory' });
+  }
+  res.json({ files });
   });
 });
 
-app.get('/:filename', (req, res) => {
-  const filename = req.params.filename;
+app.get('/file', (req, res) => {
+  const filename = req.query.filename;
   const externalUrl = `https://raw.githubusercontent.com/forsyth47/XII-Results/main/backend/sites/${filename}`;
 
   axios
-    .get(externalUrl)
-    .then(response => {
-        res.send(response.data);
-    })
+  .get(externalUrl)
+  .then(response => {
+    res.send(response.data);
+  })
 });
 
 app.listen(port, () => {

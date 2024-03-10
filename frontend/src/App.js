@@ -14,7 +14,12 @@ function App() {
   return (
     <div class="background-container">
       <div class="container">
-        <h1>Site Directory</h1>
+        <div class="toprow flex-container">
+          <h1>Site Directory</h1>
+          <button class="button" role="button"><a href="https://github.com/forsyth47/XII-Results" style={{ color: 'black' }}>View on GitHub</a></button>
+        </div>
+
+
         <ul class="file-list" id="fileList">
           {files.map((file, index) => (
             <li key={index}>
